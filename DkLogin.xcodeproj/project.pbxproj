@@ -1,0 +1,541 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70D210561C32940F0028183D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210551C32940F0028183D /* main.m */; };
+		70D210591C32940F0028183D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210581C32940F0028183D /* AppDelegate.m */; };
+		70D2105C1C32940F0028183D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2105B1C32940F0028183D /* ViewController.m */; };
+		70D2105F1C32940F0028183D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D2105D1C32940F0028183D /* Main.storyboard */; };
+		70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70D210601C32940F0028183D /* DkLogin.xcdatamodeld */; };
+		70D210641C32940F0028183D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D210631C32940F0028183D /* Assets.xcassets */; };
+		70D210671C32940F0028183D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D210651C32940F0028183D /* LaunchScreen.storyboard */; };
+		70D210721C32940F0028183D /* DkLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210711C32940F0028183D /* DkLoginTests.m */; };
+		70D2107D1C32940F0028183D /* DkLoginUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2107C1C32940F0028183D /* DkLoginUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70D2106E1C32940F0028183D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70D210491C32940F0028183D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70D210501C32940F0028183D;
+			remoteInfo = DkLogin;
+		};
+		70D210791C32940F0028183D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70D210491C32940F0028183D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70D210501C32940F0028183D;
+			remoteInfo = DkLogin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70D210511C32940F0028183D /* DkLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DkLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D210551C32940F0028183D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		70D210571C32940F0028183D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		70D210581C32940F0028183D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		70D2105A1C32940F0028183D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		70D2105B1C32940F0028183D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		70D2105E1C32940F0028183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70D210611C32940F0028183D /* DkLogin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DkLogin.xcdatamodel; sourceTree = "<group>"; };
+		70D210631C32940F0028183D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		70D210661C32940F0028183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		70D210681C32940F0028183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D2106D1C32940F0028183D /* DkLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DkLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D210711C32940F0028183D /* DkLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DkLoginTests.m; sourceTree = "<group>"; };
+		70D210731C32940F0028183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D210781C32940F0028183D /* DkLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DkLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D2107C1C32940F0028183D /* DkLoginUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DkLoginUITests.m; sourceTree = "<group>"; };
+		70D2107E1C32940F0028183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		70D2104E1C32940F0028183D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D2106A1C32940F0028183D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D210751C32940F0028183D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70D210481C32940F0028183D = {
+			isa = PBXGroup;
+			children = (
+				70D210531C32940F0028183D /* DkLogin */,
+				70D210701C32940F0028183D /* DkLoginTests */,
+				70D2107B1C32940F0028183D /* DkLoginUITests */,
+				70D210521C32940F0028183D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		70D210521C32940F0028183D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				70D210511C32940F0028183D /* DkLogin.app */,
+				70D2106D1C32940F0028183D /* DkLoginTests.xctest */,
+				70D210781C32940F0028183D /* DkLoginUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		70D210531C32940F0028183D /* DkLogin */ = {
+			isa = PBXGroup;
+			children = (
+				70D210571C32940F0028183D /* AppDelegate.h */,
+				70D210581C32940F0028183D /* AppDelegate.m */,
+				70D2105A1C32940F0028183D /* ViewController.h */,
+				70D2105B1C32940F0028183D /* ViewController.m */,
+				70D2105D1C32940F0028183D /* Main.storyboard */,
+				70D210631C32940F0028183D /* Assets.xcassets */,
+				70D210651C32940F0028183D /* LaunchScreen.storyboard */,
+				70D210681C32940F0028183D /* Info.plist */,
+				70D210601C32940F0028183D /* DkLogin.xcdatamodeld */,
+				70D210541C32940F0028183D /* Supporting Files */,
+			);
+			path = DkLogin;
+			sourceTree = "<group>";
+		};
+		70D210541C32940F0028183D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				70D210551C32940F0028183D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70D210701C32940F0028183D /* DkLoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				70D210711C32940F0028183D /* DkLoginTests.m */,
+				70D210731C32940F0028183D /* Info.plist */,
+			);
+			path = DkLoginTests;
+			sourceTree = "<group>";
+		};
+		70D2107B1C32940F0028183D /* DkLoginUITests */ = {
+			isa = PBXGroup;
+			children = (
+				70D2107C1C32940F0028183D /* DkLoginUITests.m */,
+				70D2107E1C32940F0028183D /* Info.plist */,
+			);
+			path = DkLoginUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		70D210501C32940F0028183D /* DkLogin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70D210811C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLogin" */;
+			buildPhases = (
+				70D2104D1C32940F0028183D /* Sources */,
+				70D2104E1C32940F0028183D /* Frameworks */,
+				70D2104F1C32940F0028183D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DkLogin;
+			productName = DkLogin;
+			productReference = 70D210511C32940F0028183D /* DkLogin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		70D2106C1C32940F0028183D /* DkLoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70D210841C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginTests" */;
+			buildPhases = (
+				70D210691C32940F0028183D /* Sources */,
+				70D2106A1C32940F0028183D /* Frameworks */,
+				70D2106B1C32940F0028183D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70D2106F1C32940F0028183D /* PBXTargetDependency */,
+			);
+			name = DkLoginTests;
+			productName = DkLoginTests;
+			productReference = 70D2106D1C32940F0028183D /* DkLoginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		70D210771C32940F0028183D /* DkLoginUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70D210871C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginUITests" */;
+			buildPhases = (
+				70D210741C32940F0028183D /* Sources */,
+				70D210751C32940F0028183D /* Frameworks */,
+				70D210761C32940F0028183D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70D2107A1C32940F0028183D /* PBXTargetDependency */,
+			);
+			name = DkLoginUITests;
+			productName = DkLoginUITests;
+			productReference = 70D210781C32940F0028183D /* DkLoginUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		70D210491C32940F0028183D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Sreeji Gopal";
+				TargetAttributes = {
+					70D210501C32940F0028183D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GBZL82B9DN;
+					};
+					70D2106C1C32940F0028183D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GBZL82B9DN;
+						TestTargetID = 70D210501C32940F0028183D;
+					};
+					70D210771C32940F0028183D = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GBZL82B9DN;
+						TestTargetID = 70D210501C32940F0028183D;
+					};
+				};
+			};
+			buildConfigurationList = 70D2104C1C32940F0028183D /* Build configuration list for PBXProject "DkLogin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 70D210481C32940F0028183D;
+			productRefGroup = 70D210521C32940F0028183D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				70D210501C32940F0028183D /* DkLogin */,
+				70D2106C1C32940F0028183D /* DkLoginTests */,
+				70D210771C32940F0028183D /* DkLoginUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		70D2104F1C32940F0028183D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D210671C32940F0028183D /* LaunchScreen.storyboard in Resources */,
+				70D210641C32940F0028183D /* Assets.xcassets in Resources */,
+				70D2105F1C32940F0028183D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D2106B1C32940F0028183D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D210761C32940F0028183D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		70D2104D1C32940F0028183D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */,
+				70D2105C1C32940F0028183D /* ViewController.m in Sources */,
+				70D210591C32940F0028183D /* AppDelegate.m in Sources */,
+				70D210561C32940F0028183D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D210691C32940F0028183D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D210721C32940F0028183D /* DkLoginTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70D210741C32940F0028183D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D2107D1C32940F0028183D /* DkLoginUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70D2106F1C32940F0028183D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70D210501C32940F0028183D /* DkLogin */;
+			targetProxy = 70D2106E1C32940F0028183D /* PBXContainerItemProxy */;
+		};
+		70D2107A1C32940F0028183D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70D210501C32940F0028183D /* DkLogin */;
+			targetProxy = 70D210791C32940F0028183D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		70D2105D1C32940F0028183D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70D2105E1C32940F0028183D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		70D210651C32940F0028183D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				70D210661C32940F0028183D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		70D2107F1C32940F0028183D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		70D210801C32940F0028183D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		70D210821C32940F0028183D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DkLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		70D210831C32940F0028183D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DkLogin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLogin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		70D210851C32940F0028183D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DkLoginTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DkLogin.app/DkLogin";
+			};
+			name = Debug;
+		};
+		70D210861C32940F0028183D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DkLoginTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLoginTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DkLogin.app/DkLogin";
+			};
+			name = Release;
+		};
+		70D210881C32940F0028183D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DkLoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DkLogin;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		70D210891C32940F0028183D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DkLoginUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLoginUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DkLogin;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		70D2104C1C32940F0028183D /* Build configuration list for PBXProject "DkLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70D2107F1C32940F0028183D /* Debug */,
+				70D210801C32940F0028183D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70D210811C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLogin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70D210821C32940F0028183D /* Debug */,
+				70D210831C32940F0028183D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70D210841C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70D210851C32940F0028183D /* Debug */,
+				70D210861C32940F0028183D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		70D210871C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70D210881C32940F0028183D /* Debug */,
+				70D210891C32940F0028183D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		70D210601C32940F0028183D /* DkLogin.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				70D210611C32940F0028183D /* DkLogin.xcdatamodel */,
+			);
+			currentVersion = 70D210611C32940F0028183D /* DkLogin.xcdatamodel */;
+			path = DkLogin.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 70D210491C32940F0028183D /* Project object */;
+}
