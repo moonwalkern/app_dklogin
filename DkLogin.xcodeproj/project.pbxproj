@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		703AE40A1C4BBFCB00D6EFCA /* NewUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */; };
+		703AE40B1C4BBFCB00D6EFCA /* NewUser1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */; };
+		703AE40E1C4BCF6A00D6EFCA /* BackSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE40C1C4BCF6A00D6EFCA /* BackSign.png */; };
+		703AE40F1C4BCF6A00D6EFCA /* FrontSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE40D1C4BCF6A00D6EFCA /* FrontSign.png */; };
+		703AE4111C4BD56400D6EFCA /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4101C4BD56400D6EFCA /* Back.png */; };
+		703AE4131C4BE63500D6EFCA /* BackBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4121C4BE63500D6EFCA /* BackBtn.png */; };
+		703AE4161C4C18FF00D6EFCA /* NewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 703AE4151C4C18FF00D6EFCA /* NewViewController.m */; };
+		705C41701C3F8D4300E32030 /* DkAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 705C416F1C3F8D4300E32030 /* DkAppDelegate.m */; };
+		705C41721C442E0F00E32030 /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 705C41711C442E0F00E32030 /* checkbox-checked.png */; };
+		705C41751C442E1800E32030 /* checkbox-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 705C41731C442E1800E32030 /* checkbox-pressed.png */; };
+		705C41761C442E1800E32030 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 705C41741C442E1800E32030 /* checkbox.png */; };
+		705C41781C44C21500E32030 /* dk_bg_beer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 705C41771C44C21500E32030 /* dk_bg_beer.jpg */; };
+		705C417A1C44F52000E32030 /* beerLogin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 705C41791C44F52000E32030 /* beerLogin.jpg */; };
+		705C417C1C44FC3300E32030 /* beerNewdrunkcart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 705C417B1C44FC3300E32030 /* beerNewdrunkcart.jpg */; };
+		705C417F1C44FE7F00E32030 /* NewDrunkcartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705C417E1C44FE7F00E32030 /* NewDrunkcartViewController.m */; };
+		705C41811C4502D100E32030 /* beerNew.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 705C41801C4502D100E32030 /* beerNew.jpg */; };
+		705C41831C454E1000E32030 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705C41821C454E1000E32030 /* CoreLocation.framework */; };
+		709DC16A1C3AEB0E0041F30F /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 709DC1671C3AEB0E0041F30F /* error@2x.png */; };
+		709DC16B1C3AEB0E0041F30F /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */; };
+		709DC1F91C3BCF4E0041F30F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC1F61C3BCF4E0041F30F /* User+CoreDataProperties.m */; };
+		709DC1FA1C3BCF4E0041F30F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC1F81C3BCF4E0041F30F /* User.m */; };
 		70D210561C32940F0028183D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210551C32940F0028183D /* main.m */; };
-		70D210591C32940F0028183D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210581C32940F0028183D /* AppDelegate.m */; };
-		70D2105C1C32940F0028183D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2105B1C32940F0028183D /* ViewController.m */; };
 		70D2105F1C32940F0028183D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D2105D1C32940F0028183D /* Main.storyboard */; };
 		70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 70D210601C32940F0028183D /* DkLogin.xcdatamodeld */; };
 		70D210641C32940F0028183D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70D210631C32940F0028183D /* Assets.xcassets */; };
-		70D210671C32940F0028183D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D210651C32940F0028183D /* LaunchScreen.storyboard */; };
 		70D210721C32940F0028183D /* DkLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D210711C32940F0028183D /* DkLoginTests.m */; };
 		70D2107D1C32940F0028183D /* DkLoginUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2107C1C32940F0028183D /* DkLoginUITests.m */; };
+		70D2108C1C3298560028183D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D2108B1C3298560028183D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +55,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser.jpg; path = ../../../../Downloads/NewUser.jpg; sourceTree = "<group>"; };
+		703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser1.jpg; path = ../../../../Downloads/NewUser1.jpg; sourceTree = "<group>"; };
+		703AE40C1C4BCF6A00D6EFCA /* BackSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackSign.png; path = ../../../../Downloads/BackSign.png; sourceTree = "<group>"; };
+		703AE40D1C4BCF6A00D6EFCA /* FrontSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FrontSign.png; path = ../../../../Downloads/FrontSign.png; sourceTree = "<group>"; };
+		703AE4101C4BD56400D6EFCA /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = ../../Images/Back.png; sourceTree = "<group>"; };
+		703AE4121C4BE63500D6EFCA /* BackBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackBtn.png; path = ../../../../Downloads/BackBtn.png; sourceTree = "<group>"; };
+		703AE4141C4C18FF00D6EFCA /* NewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewViewController.h; sourceTree = "<group>"; };
+		703AE4151C4C18FF00D6EFCA /* NewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewViewController.m; sourceTree = "<group>"; };
+		705C416E1C3F8CF100E32030 /* DkAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DkAppDelegate.h; sourceTree = "<group>"; };
+		705C416F1C3F8D4300E32030 /* DkAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DkAppDelegate.m; sourceTree = "<group>"; };
+		705C41711C442E0F00E32030 /* checkbox-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-checked.png"; path = "../../../../Downloads/Checkbox/checkbox-checked.png"; sourceTree = "<group>"; };
+		705C41731C442E1800E32030 /* checkbox-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkbox-pressed.png"; path = "../../../../Downloads/Checkbox/checkbox-pressed.png"; sourceTree = "<group>"; };
+		705C41741C442E1800E32030 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkbox.png; path = ../../../../Downloads/Checkbox/checkbox.png; sourceTree = "<group>"; };
+		705C41771C44C21500E32030 /* dk_bg_beer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dk_bg_beer.jpg; path = ../../../../Downloads/dk_bg_beer.jpg; sourceTree = "<group>"; };
+		705C41791C44F52000E32030 /* beerLogin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beerLogin.jpg; path = ../../../../Downloads/beerLogin.jpg; sourceTree = "<group>"; };
+		705C417B1C44FC3300E32030 /* beerNewdrunkcart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beerNewdrunkcart.jpg; path = ../../../../Downloads/beerNewdrunkcart.jpg; sourceTree = "<group>"; };
+		705C417D1C44FE7F00E32030 /* NewDrunkcartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewDrunkcartViewController.h; path = DkLogin/NewDrunkcartViewController.h; sourceTree = "<group>"; };
+		705C417E1C44FE7F00E32030 /* NewDrunkcartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewDrunkcartViewController.m; path = DkLogin/NewDrunkcartViewController.m; sourceTree = "<group>"; };
+		705C41801C4502D100E32030 /* beerNew.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beerNew.jpg; path = ../../../../Downloads/beerNew.jpg; sourceTree = "<group>"; };
+		705C41821C454E1000E32030 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		709DC1671C3AEB0E0041F30F /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		709DC1681C3AEB0E0041F30F /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
+		709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
+		709DC1F51C3BCF4E0041F30F /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		709DC1F61C3BCF4E0041F30F /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		709DC1F71C3BCF4E0041F30F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		709DC1F81C3BCF4E0041F30F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		70D210511C32940F0028183D /* DkLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DkLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D210551C32940F0028183D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		70D210571C32940F0028183D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		70D210581C32940F0028183D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		70D2105A1C32940F0028183D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		70D2105B1C32940F0028183D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		70D2105E1C32940F0028183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70D210611C32940F0028183D /* DkLogin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DkLogin.xcdatamodel; sourceTree = "<group>"; };
 		70D210631C32940F0028183D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		70D210661C32940F0028183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70D210681C32940F0028183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70D2106D1C32940F0028183D /* DkLoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DkLoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D210711C32940F0028183D /* DkLoginTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DkLoginTests.m; sourceTree = "<group>"; };
@@ -53,6 +94,8 @@
 		70D210781C32940F0028183D /* DkLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DkLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D2107C1C32940F0028183D /* DkLoginUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DkLoginUITests.m; sourceTree = "<group>"; };
 		70D2107E1C32940F0028183D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70D2108A1C3298560028183D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		70D2108B1C3298560028183D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				705C41831C454E1000E32030 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +127,31 @@
 		70D210481C32940F0028183D = {
 			isa = PBXGroup;
 			children = (
+				703AE4141C4C18FF00D6EFCA /* NewViewController.h */,
+				703AE4151C4C18FF00D6EFCA /* NewViewController.m */,
+				705C41821C454E1000E32030 /* CoreLocation.framework */,
+				705C416F1C3F8D4300E32030 /* DkAppDelegate.m */,
+				703AE4121C4BE63500D6EFCA /* BackBtn.png */,
+				703AE4101C4BD56400D6EFCA /* Back.png */,
+				703AE40C1C4BCF6A00D6EFCA /* BackSign.png */,
+				703AE40D1C4BCF6A00D6EFCA /* FrontSign.png */,
+				705C417B1C44FC3300E32030 /* beerNewdrunkcart.jpg */,
+				703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */,
+				703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */,
+				705C41771C44C21500E32030 /* dk_bg_beer.jpg */,
+				705C41791C44F52000E32030 /* beerLogin.jpg */,
+				705C41711C442E0F00E32030 /* checkbox-checked.png */,
+				705C41731C442E1800E32030 /* checkbox-pressed.png */,
+				705C41741C442E1800E32030 /* checkbox.png */,
+				709DC1671C3AEB0E0041F30F /* error@2x.png */,
+				705C41801C4502D100E32030 /* beerNew.jpg */,
+				709DC1681C3AEB0E0041F30F /* TextFieldValidator.h */,
+				709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */,
+				70D2108A1C3298560028183D /* LoginViewController.h */,
+				70D2108B1C3298560028183D /* LoginViewController.m */,
+				705C416E1C3F8CF100E32030 /* DkAppDelegate.h */,
+				705C417D1C44FE7F00E32030 /* NewDrunkcartViewController.h */,
+				705C417E1C44FE7F00E32030 /* NewDrunkcartViewController.m */,
 				70D210531C32940F0028183D /* DkLogin */,
 				70D210701C32940F0028183D /* DkLoginTests */,
 				70D2107B1C32940F0028183D /* DkLoginUITests */,
@@ -103,15 +172,14 @@
 		70D210531C32940F0028183D /* DkLogin */ = {
 			isa = PBXGroup;
 			children = (
-				70D210571C32940F0028183D /* AppDelegate.h */,
-				70D210581C32940F0028183D /* AppDelegate.m */,
-				70D2105A1C32940F0028183D /* ViewController.h */,
-				70D2105B1C32940F0028183D /* ViewController.m */,
 				70D2105D1C32940F0028183D /* Main.storyboard */,
 				70D210631C32940F0028183D /* Assets.xcassets */,
-				70D210651C32940F0028183D /* LaunchScreen.storyboard */,
 				70D210681C32940F0028183D /* Info.plist */,
 				70D210601C32940F0028183D /* DkLogin.xcdatamodeld */,
+				709DC1F51C3BCF4E0041F30F /* User+CoreDataProperties.h */,
+				709DC1F61C3BCF4E0041F30F /* User+CoreDataProperties.m */,
+				709DC1F71C3BCF4E0041F30F /* User.h */,
+				709DC1F81C3BCF4E0041F30F /* User.m */,
 				70D210541C32940F0028183D /* Supporting Files */,
 			);
 			path = DkLogin;
@@ -249,9 +317,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D210671C32940F0028183D /* LaunchScreen.storyboard in Resources */,
+				703AE40E1C4BCF6A00D6EFCA /* BackSign.png in Resources */,
+				709DC16A1C3AEB0E0041F30F /* error@2x.png in Resources */,
+				703AE40B1C4BBFCB00D6EFCA /* NewUser1.jpg in Resources */,
+				703AE4131C4BE63500D6EFCA /* BackBtn.png in Resources */,
 				70D210641C32940F0028183D /* Assets.xcassets in Resources */,
+				705C41811C4502D100E32030 /* beerNew.jpg in Resources */,
+				705C417C1C44FC3300E32030 /* beerNewdrunkcart.jpg in Resources */,
+				705C41761C442E1800E32030 /* checkbox.png in Resources */,
+				705C417A1C44F52000E32030 /* beerLogin.jpg in Resources */,
+				705C41721C442E0F00E32030 /* checkbox-checked.png in Resources */,
+				705C41781C44C21500E32030 /* dk_bg_beer.jpg in Resources */,
 				70D2105F1C32940F0028183D /* Main.storyboard in Resources */,
+				705C41751C442E1800E32030 /* checkbox-pressed.png in Resources */,
+				703AE4111C4BD56400D6EFCA /* Back.png in Resources */,
+				703AE40F1C4BCF6A00D6EFCA /* FrontSign.png in Resources */,
+				703AE40A1C4BBFCB00D6EFCA /* NewUser.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +357,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				709DC1F91C3BCF4E0041F30F /* User+CoreDataProperties.m in Sources */,
+				709DC1FA1C3BCF4E0041F30F /* User.m in Sources */,
+				70D2108C1C3298560028183D /* LoginViewController.m in Sources */,
 				70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */,
-				70D2105C1C32940F0028183D /* ViewController.m in Sources */,
-				70D210591C32940F0028183D /* AppDelegate.m in Sources */,
+				705C41701C3F8D4300E32030 /* DkAppDelegate.m in Sources */,
 				70D210561C32940F0028183D /* main.m in Sources */,
+				703AE4161C4C18FF00D6EFCA /* NewViewController.m in Sources */,
+				705C417F1C44FE7F00E32030 /* NewDrunkcartViewController.m in Sources */,
+				709DC16B1C3AEB0E0041F30F /* TextFieldValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,14 +407,6 @@
 				70D2105E1C32940F0028183D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		70D210651C32940F0028183D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				70D210661C32940F0028183D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreeji.gopal@gmail.com (QYJ8EMR9N2)";
 				INFOPLIST_FILE = DkLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLogin;
@@ -505,6 +584,7 @@
 				70D210831C32940F0028183D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70D210841C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +593,7 @@
 				70D210861C32940F0028183D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70D210871C32940F0028183D /* Build configuration list for PBXNativeTarget "DkLoginUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +602,7 @@
 				70D210891C32940F0028183D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

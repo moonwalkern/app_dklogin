@@ -6,7 +6,7 @@
 //  Copyright © 2015 Sreeji Gopal. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "DkAppDelegate.h"
 
 @interface AppDelegate ()
 
