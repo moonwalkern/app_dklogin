@@ -121,7 +121,7 @@
     NSString *postData=[NSString stringWithFormat:@"device=iOS&email=%@&password=%@&firstname=%@lastname=%@mobile=%@govtid=%@",txtEmail.text,txtPassword.text,txtFirstName.text,txtLastName.text,txtMobile.text,txtGovtID.text];
 
     [self placeGetRequest:urlRest:postData withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        // your code
+        //Get Response data
         _responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         
         NSLog(@"Value for Json Data %@", _responseData);
