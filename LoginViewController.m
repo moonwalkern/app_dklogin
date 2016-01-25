@@ -11,6 +11,8 @@
 #import "DkAppDelegate.h"
 #import "User+CoreDataProperties.h"
 #import "NewDrunkcartViewController.h"
+#import "GlobalData.h"
+#import "CoreDataManager.h"
 
 
 #define REGEX_USER_NAME_LIMIT @"^.{1,20}$"
@@ -47,6 +49,8 @@
 @synthesize tabGesture;
 
 - (void)viewDidLoad {
+    
+
     [super viewDidLoad];
     activityInd.hidden = YES;
     [txtUser becomeFirstResponder];
@@ -55,10 +59,16 @@
     self.txtPassword.delegate = self;
     checked = NO;
     // Do any additional setup after loading the view.
+    NSLog(@"%@",[GlobalData sharedGlobalData].message);
+    
+    
+    
+    NSLog(@"Data value %@", [[GlobalData sharedGlobalData] webServiceHostName]);
+
     
 //    [txtUser addRegx:REGEX_USER_NAME_LIMIT withMsg:@"User name cannot be blank."];
 //    [txtUser addRegx:REGEX_USER_NAME withMsg:@"Only alpha numeric characters are allowed."];
-    
+    //[[GlobalData sharedGlobalData]getPostData];
     //Validate TextFields
     [txtUser addRegx:REGEX_EMAIL withMsg:@"Enter valid email."];
     [txtPassword addRegx:REGEX_PASSWORD_LIMIT withMsg:@"Password characters limit should be come between 6-20"];
@@ -69,6 +79,52 @@
     Data = [[NSMutableData alloc] init];
     AppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
     _managedObjectContext = [appDelegate managedObjectContext];
+    
+    
+    NSMutableDictionary* userDict = [[NSMutableDictionary alloc]init];
+    userDict[@"user"] = @"Sreeji.Gopal@gmail.com";
+    userDict[@"data"] = @"yes";
+    [[CoreDataManager sharedManager]createEntityWithClassName:@"User" attributesDictionary:userDict];
+    
+    [[CoreDataManager sharedManager]saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+        if(error != nil){
+            NSLog(@"Saved");
+        }else{
+            NSLog(@"Save error %@",error);
+        }
+        
+    }];
+    
+    NSArray *sort = @[@"user"];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"user == %@", @"sreeji.gopal@gmail.com" ];
+    
+    //[[CoreDataManager sharedManager]fetchEntitiesWithClassName:@"User" sortDescriptors:sort sectionNameKeyPath:nil predicate:predicate];
+    
+    NSArray *fetchedUserData = [[CoreDataManager sharedManager]fetchAllEntityWithClassName:@"User"];
+    User *userData = fetchedUserData;
+    
+//    for (NSManagedObject *user in fetchedUserData) {
+//        [[CoreDataManager sharedManager]deleteEntity:user];
+//    }
+    
+    // display all objects
+    for (User *event in fetchedUserData) {
+        NSLog(@"%@ -- Data %@", [event.user description], [event.data description]);
+        
+    }
+    
+    //[[GlobalData sharedGlobalData]printArrayData:fetchedUserData];
+    
+    fetchedUserData = [[CoreDataManager sharedManager]fetchPredicateEntityWithClassName:@"User" :@"user" :@"Sreeji.Gopal@hotmail.com"];
+    // display all objects
+    for (User *event in fetchedUserData) {
+        NSLog(@"%@ -- Data %@", [event.user description], [event.data description]);
+        
+    }
+    
+    [[CoreDataManager sharedManager]deleteEntity:fetchedUserData ];
     
     //UISwitch *mySwitch = [UISwitch new];
     //mySwitch.transform = CGAffineTransformMakeScale(0.75, 0.75);
@@ -140,6 +196,7 @@
 
 - (IBAction)btnNewDrunkcart:(UIButton *)sender {
     NSLog(@"New to Drunkcart");
+     [[GlobalData sharedGlobalData] getPostData];
 //    UIStoryboard *newDrunkcartStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    UIViewController *vc = [newDrunkcartStoryBoard instantiateViewControllerWithIdentifier:@"NewDrunkardViewController"];
 //    [self presentViewController:vc animated:true completion:nil];
@@ -150,70 +207,32 @@
 
 
 
-
-
-//This will validate user (email or phone) and store in ManagedContext.
--(void) validateUserAndLoad:(NSString *) userEmailorPhone:(NSString *) password{
-    
+-(void)validateUserAndLoad :(NSString*) userEmailorPhone :(NSString*) password{
     NSString *urlRest = @"http://mydrunkcart/index.php?route=module/apps/validate/";
-    //NSString *postData=[NSString stringWithFormat:@"email=sreeji.gopal@hotmail.com&password=7bd3ebaf0f&device=iOS"];
-    NSString *postData=[NSString stringWithFormat:@"email=%@&password=%@&device=iOS",userEmailorPhone,password];
-    //sreeji.gopal@hotmail.com&password=sreeji&device=iOS"];
-    //[self getREST: urlGet :postData];
-    [self placeGetRequest:postData withHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        // your code
-        _responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-        
-        NSLog(@"Value for Json Data %@", _responseData);
-        
-        if(_responseData != NULL){
-            NSLog(@"Response data is not null");
-            
-            NSDictionary* jsonUser = nil;
-            if (_responseData) {
-                jsonUser = [NSJSONSerialization
-                            JSONObjectWithData:data
-                            options:kNilOptions
-                            error:nil];
-            }
-            
-            jsonUser = [jsonUser objectForKey:@"data"];
-            NSLog(@"Data value %lu", [jsonUser count]);
-            
-            if(![[jsonUser objectForKey:@"status"]  isEqual: @"0"]){
-                NSLog(@"User Details not found due to %@", [jsonUser objectForKey:@"message"]);
-            }else{
-                NSLog(@"User Found Proceed");
-            }
-                
-            [self addUserDetails:userEmailorPhone:Data];
-            [self fetchUserDetails:@"sreeji.gopal@gmail.com"];
-            //results = [Data valueForKey:@"data"];
-            //NSLog(@"Count %ld", [results count]);
-        }else{
-            NSLog(@"No data found for the");
-        }
-        
-    }];
+    NSString *postData=[NSString stringWithFormat:@"device=iOS&email=%@&password=%@",userEmailorPhone,password];
+    NSDictionary* jsonUser = nil;
+    jsonUser = [[GlobalData sharedGlobalData] requestSynchronousData:urlRest :postData :@"POST"];
+    
+    NSLog(@"User Data: %@", jsonUser);
+    
+    if(jsonUser != NULL){
+        if([[jsonUser objectForKey:@"status"]  isEqual: 0]){
+            NSLog(@"User Details not found due to %@", [jsonUser objectForKey:@"message"]);
+    }else{
+        NSLog(@"User Found Proceed");
+        [self addUserData:userEmailorPhone:jsonUser];
 
+    }
+    }else{
+        NSLog(@"No data found for the");
+    }
     
 }
 
 
-
--(void)addUserDetails:(NSString *) user:(NSData *) data{
-    User *userData = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:_managedObjectContext];
-    [userData setUser:user];
-    [userData setData:data];
-   
-    NSError *error = nil;
-    if([self validateCoreDataDuplicates:user]){
-        if (![_managedObjectContext save:&error]) {
-            NSLog(@"Error saving data");
-        }else{
-            NSLog(@"Data Saved");
-        }
-    }
+-(void)addUserData:(NSString *) user:(NSDictionary *) data{
+    
+    
     
 }
 

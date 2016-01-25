@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701E1F6D1C513DEB00C1D3B4 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */; };
+		701E1F701C54BE7E00C1D3B4 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */; };
 		703AE40A1C4BBFCB00D6EFCA /* NewUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */; };
 		703AE40B1C4BBFCB00D6EFCA /* NewUser1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */; };
 		703AE40E1C4BCF6A00D6EFCA /* BackSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE40C1C4BCF6A00D6EFCA /* BackSign.png */; };
@@ -55,6 +57,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		701E1F6B1C513DEB00C1D3B4 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
+		701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
+		701E1F6E1C54BE7E00C1D3B4 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		701E1F711C54BED600C1D3B4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser.jpg; path = ../../../../Downloads/NewUser.jpg; sourceTree = "<group>"; };
 		703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser1.jpg; path = ../../../../Downloads/NewUser1.jpg; sourceTree = "<group>"; };
 		703AE40C1C4BCF6A00D6EFCA /* BackSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackSign.png; path = ../../../../Downloads/BackSign.png; sourceTree = "<group>"; };
@@ -127,6 +134,11 @@
 		70D210481C32940F0028183D = {
 			isa = PBXGroup;
 			children = (
+				701E1F6B1C513DEB00C1D3B4 /* GlobalData.h */,
+				701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */,
+				701E1F6E1C54BE7E00C1D3B4 /* CoreDataManager.h */,
+				701E1F711C54BED600C1D3B4 /* Constants.h */,
+				701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */,
 				703AE4141C4C18FF00D6EFCA /* NewViewController.h */,
 				703AE4151C4C18FF00D6EFCA /* NewViewController.m */,
 				705C41821C454E1000E32030 /* CoreLocation.framework */,
@@ -362,9 +374,11 @@
 				70D2108C1C3298560028183D /* LoginViewController.m in Sources */,
 				70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */,
 				705C41701C3F8D4300E32030 /* DkAppDelegate.m in Sources */,
+				701E1F701C54BE7E00C1D3B4 /* CoreDataManager.m in Sources */,
 				70D210561C32940F0028183D /* main.m in Sources */,
 				703AE4161C4C18FF00D6EFCA /* NewViewController.m in Sources */,
 				705C417F1C44FE7F00E32030 /* NewDrunkcartViewController.m in Sources */,
+				701E1F6D1C513DEB00C1D3B4 /* GlobalData.m in Sources */,
 				709DC16B1C3AEB0E0041F30F /* TextFieldValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
