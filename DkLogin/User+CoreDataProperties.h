@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.h
 //  DkLogin
 //
-//  Created by Sreeji Gopal on 05/01/16.
+//  Created by Sreeji Gopal on 25/01/16.
 //  Copyright © 2016 Sreeji Gopal. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,8 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface User (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *user;
-@property (nullable, nonatomic, retain) NSData *data;
+@property (nullable, nonatomic, retain) NSString *ipaddress;
+@property (nullable, nonatomic, retain) NSString *username;
+@property (nullable, nonatomic, retain) NSString *password;
+@property (nullable, nonatomic, retain) NSNumber *loggedin;
+@property (nullable, nonatomic, retain) NSDate *timestamp;
 
 @end
 

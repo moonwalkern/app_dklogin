@@ -3,19 +3,23 @@
     <entity name="Card" syncable="YES"/>
     <entity name="Cart" syncable="YES"/>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="data" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ipaddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loggedin" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="UserDetails" syncable="YES">
-        <attribute name="userdata" optional="YES" attributeType="Transformable" syncable="YES"/>
+    <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="userdata" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Vendor" syncable="YES"/>
     <elements>
-        <element name="Card" positionX="331" positionY="-90" width="128" height="43"/>
-        <element name="Cart" positionX="7" positionY="-126" width="128" height="43"/>
-        <element name="User" positionX="-191" positionY="-129" width="128" height="73"/>
-        <element name="Vendor" positionX="178" positionY="-108" width="128" height="43"/>
-        <element name="UserDetails" positionX="36" positionY="-90" width="128" height="75"/>
+        <element name="Card" positionX="331" positionY="-90" width="128" height="45"/>
+        <element name="Cart" positionX="7" positionY="-126" width="128" height="45"/>
+        <element name="User" positionX="-191" positionY="-129" width="128" height="118"/>
+        <element name="UserDetails" positionX="36" positionY="-90" width="128" height="90"/>
+        <element name="Vendor" positionX="178" positionY="-108" width="128" height="45"/>
     </elements>
 </model>

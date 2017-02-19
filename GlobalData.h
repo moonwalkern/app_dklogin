@@ -44,4 +44,7 @@
 -(void)cleanCoreData :(NSString*)entity;
 -(BOOL)validateCoreDataDuplicates:(NSString *) entityId;
 -(void)printArrayData:(NSArray *)arrayData;
+-(NSString *)getIPAddress;
+-(NSString *)sha1:(NSString *)str;
+-(NSString *)buildPassword:(NSString*)salt:(NSString*)password;
 @end

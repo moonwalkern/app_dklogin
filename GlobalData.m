@@ -9,6 +9,9 @@
 #import "GlobalData.h"
 #import <UIKit/UIKit.h>
 #import "User+CoreDataProperties.h"
+#include <ifaddrs.h>
+#include <arpa/inet.h>
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation GlobalData
 @synthesize message;
@@ -62,8 +65,8 @@ static GlobalData *sharedGlobalData = nil;
     NSManagedObjectContext *context = _managedObjectContext;
     
     User *userData = [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:_managedObjectContext];
-    [userData setUser:entityId];
-    [userData setData:data];
+    [userData setUsername:entityId];
+    [userData setIpaddress:data];
     
     NSError *error = nil;
     
@@ -88,8 +91,8 @@ static GlobalData *sharedGlobalData = nil;
     NSArray *items = [_managedObjectContext executeFetchRequest:request error:&error];
     if(items.count > 0){
         for(User *thisUser in items){
-            if([thisUser.user isEqualToString: entityId]){
-                NSLog(@"User from core data %@ User as input %@",thisUser.user,entityId );
+            if([thisUser.username isEqualToString: entityId]){
+                NSLog(@"User from core data %@ User as input %@",thisUser.username,entityId );
                 unique = NO;
                 return unique;
             }
@@ -201,6 +204,64 @@ static GlobalData *sharedGlobalData = nil;
     for (NSString *myData in arrayData) {
         NSLog(@"%@",myData);
     }
+}
+
+-(NSString*)getIPAddress{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while (temp_addr != NULL) {
+            if( temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if ([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    return address;
+
+}
+
+- (NSString *)sha1:(NSString *)str {
+    const char *cStr = [str UTF8String];
+    unsigned char result[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA1(cStr, strlen(cStr), result);
+    if (result) {
+        /* SHA-1 hash has been calculated and stored in 'result'. */
+        
+        NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH];
+        
+        for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+            [output appendFormat:@"%02x", result[i]];
+        return output;
+        
+    }
+    return nil;
+}
+
+-(NSString *)buildPassword :(NSString *)salt :(NSString *)password{
+    NSString *encrypt1, *encrypt2, *encrypt3;
+    //SHA1(CONCAT(salt, SHA1(CONCAT(salt, SHA1('sreeji'))))
+    encrypt1 = [NSString stringWithFormat:@"%@%@",salt,[self sha1:password]];
+    encrypt2 = [NSString stringWithFormat:@"%@%@",salt,[self sha1:encrypt1]];
+    encrypt3 = [self sha1:encrypt2];
+    NSLog(@"%@", encrypt3);
+    return encrypt3;
 }
 
 @end

@@ -13,6 +13,9 @@
 #import "NewDrunkcartViewController.h"
 #import "GlobalData.h"
 #import "CoreDataManager.h"
+#import "UserDetails.h"
+#import "MainViewViewController.h"
+#import "SWRevealViewController.h"
 
 
 #define REGEX_USER_NAME_LIMIT @"^.{1,20}$"
@@ -82,8 +85,8 @@
     
     
     NSMutableDictionary* userDict = [[NSMutableDictionary alloc]init];
-    userDict[@"user"] = @"Sreeji.Gopal@gmail.com";
-    userDict[@"data"] = @"yes";
+    userDict[@"username"] = @"sreeji.gopal@gmail.com";
+    userDict[@"ipaddress"] = @"yes";
     [[CoreDataManager sharedManager]createEntityWithClassName:@"User" attributesDictionary:userDict];
     
     [[CoreDataManager sharedManager]saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
@@ -95,36 +98,44 @@
         
     }];
     
+    //NSLog(@"SHA1 %@",[[GlobalData sharedGlobalData]sha1:@"Hello World"]);
+    
+    
+    
+    
+    
     NSArray *sort = @[@"user"];
     
     NSPredicate *predicate =
-    [NSPredicate predicateWithFormat:@"user == %@", @"sreeji.gopal@gmail.com" ];
+    [NSPredicate predicateWithFormat:@"username == %@", @"sreeji.gopal@gmail.com" ];
     
     //[[CoreDataManager sharedManager]fetchEntitiesWithClassName:@"User" sortDescriptors:sort sectionNameKeyPath:nil predicate:predicate];
     
     NSArray *fetchedUserData = [[CoreDataManager sharedManager]fetchAllEntityWithClassName:@"User"];
     User *userData = fetchedUserData;
     
-//    for (NSManagedObject *user in fetchedUserData) {
-//        [[CoreDataManager sharedManager]deleteEntity:user];
-//    }
+    for (NSManagedObject *user in fetchedUserData) {
+        //[[CoreDataManager sharedManager]deleteEntity:user];
+    }
     
     // display all objects
     for (User *event in fetchedUserData) {
-        NSLog(@"%@ -- Data %@", [event.user description], [event.data description]);
+        NSLog(@"%@ -- Data %@", [event.username description], [event.ipaddress description]);
         
     }
     
     //[[GlobalData sharedGlobalData]printArrayData:fetchedUserData];
     
-    fetchedUserData = [[CoreDataManager sharedManager]fetchPredicateEntityWithClassName:@"User" :@"user" :@"Sreeji.Gopal@hotmail.com"];
+    fetchedUserData = [[CoreDataManager sharedManager]fetchPredicateEntityWithClassName:@"User" :@"username" :@"Sreeji.Gopal@hotmail.com"];
     // display all objects
     for (User *event in fetchedUserData) {
-        NSLog(@"%@ -- Data %@", [event.user description], [event.data description]);
+        NSLog(@"%@ -- Data %@", [event.username description], [event.ipaddress description]);
         
     }
     
-    [[CoreDataManager sharedManager]deleteEntity:fetchedUserData ];
+    //[[CoreDataManager sharedManager]deleteEntity:fetchedUserData ];
+    
+    NSLog(@"IP -:%@",[[GlobalData sharedGlobalData]getIPAddress]);
     
     //UISwitch *mySwitch = [UISwitch new];
     //mySwitch.transform = CGAffineTransformMakeScale(0.75, 0.75);
@@ -133,6 +144,10 @@
     
     tabGesture.enabled = NO;
     [self.view addGestureRecognizer:tabGesture];
+    
+    
+    
+    
 
 }
 
@@ -197,248 +212,137 @@
 - (IBAction)btnNewDrunkcart:(UIButton *)sender {
     NSLog(@"New to Drunkcart");
      [[GlobalData sharedGlobalData] getPostData];
-//    UIStoryboard *newDrunkcartStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *vc = [newDrunkcartStoryBoard instantiateViewControllerWithIdentifier:@"NewDrunkardViewController"];
-//    [self presentViewController:vc animated:true completion:nil];
-    NewDrunkcartViewController *newDrunkcartView = [self.storyboard instantiateViewControllerWithIdentifier:@"NewToRegisterStoryBoard"];
-    [self.navigationController pushViewController:newDrunkcartView animated:YES];
+    UIStoryboard *newDrunkcartStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [newDrunkcartStoryBoard instantiateViewControllerWithIdentifier:@"NewToRegisterStoryBoard"];
+    [self presentViewController:vc animated:true completion:nil];
+//    SWRevealViewController *rearDrunkcartView = [self.storyboard instantiateViewControllerWithIdentifier:@"RearViewStoryBoard"];
+//    [self.navigationController pushViewController:rearDrunkcartView animated:NO];
+//    MainViewViewController *mainDrunkcartView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewStoryBoard"];
+//    [self.navigationController pushViewController:mainDrunkcartView animated:YES];
+    
     
 }
 
 
 
--(void)validateUserAndLoad :(NSString*) userEmailorPhone :(NSString*) password{
+-(BOOL)validateUserAndLoad :(NSString*) userEmailorPhone :(NSString*) password{
     NSString *urlRest = @"http://mydrunkcart/index.php?route=module/apps/validate/";
     NSString *postData=[NSString stringWithFormat:@"device=iOS&email=%@&password=%@",userEmailorPhone,password];
-    NSDictionary* jsonUser = nil;
-    jsonUser = [[GlobalData sharedGlobalData] requestSynchronousData:urlRest :postData :@"POST"];
+    NSDictionary *jsonUser = [[NSDictionary alloc]init];
     
-    NSLog(@"User Data: %@", jsonUser);
     
-    if(jsonUser != NULL){
-        if([[jsonUser objectForKey:@"status"]  isEqual: 0]){
-            NSLog(@"User Details not found due to %@", [jsonUser objectForKey:@"message"]);
-    }else{
-        NSLog(@"User Found Proceed");
-        [self addUserData:userEmailorPhone:jsonUser];
+    
+    //Check of core data exist for the given username, if no fetch the data from WS else load it back from core data and exit this method
+    NSArray *fetchUserData  = [self readUserData:userEmailorPhone];
+    
+    if([fetchUserData count] < 0){
+        UserDetails *userDetails = fetchUserData[0];
+        
+        NSLog(@"[userDetails.userdata description] %@",[userDetails.userdata description]);
+        NSError *jsonError = nil;
+        NSArray *arr =
+        [NSJSONSerialization JSONObjectWithData:[[userDetails.userdata description] dataUsingEncoding:NSUTF8StringEncoding]
+                                        options:NSJSONReadingMutableContainers
+                                            error:&jsonError];
 
-    }
-    }else{
-        NSLog(@"No data found for the");
-    }
-    
-}
+        jsonUser = arr;
+        jsonUser = [jsonUser objectForKey:@"data"];
+        NSLog(@"Error %@",jsonError);
+  
+        NSLog(@"User data fetched from core data %@", jsonUser);
+        
+        //Check for password match from the json data fetched from core data.
+        NSString *salt = [jsonUser objectForKey:@"salt"];
+        NSString *passwordCoreData = [jsonUser objectForKey:@"password"];
+        NSString *passwordEncrypted = [[GlobalData sharedGlobalData]buildPassword:salt:password];
+        
+        NSLog(@"Password From CoreData %@ Password Encrypted %@", passwordCoreData, passwordEncrypted);
 
-
--(void)addUserData:(NSString *) user:(NSDictionary *) data{
-    
-    
-    
-}
-
--(BOOL)validateCoreDataDuplicates:(NSString *) userName{
-    
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"User" inManagedObjectContext:_managedObjectContext];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entityDescription];
-    BOOL unique = YES;
-    NSError  *error;
-    NSArray *items = [_managedObjectContext executeFetchRequest:request error:&error];
-    if(items.count > 0){
-        for(User *thisUser in items){
-            if([thisUser.user isEqualToString: userName]){
-                NSLog(@"User from core data %@ User as input %@",thisUser.user,userName );
-                unique = NO;
-                return unique;
-            }
-        }
-    }
-    NSLog(@"bool %s", unique ? "true" : "false");
-    return unique;
-}
-
-
--(void)deleteCoreData{
-    NSManagedObjectContext *context = _managedObjectContext;
-    NSFetchRequest * allMovies = [[NSFetchRequest alloc] init];
-    [allMovies setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:context]];
-    [allMovies setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-    
-    NSError * error = nil;
-    NSArray * movies = [context executeFetchRequest:allMovies error:&error];
-    //error handling goes here
-    for (NSManagedObject * movie in movies) {
-        [context deleteObject:movie];
-    }
-    NSError *saveError = nil;
-    [context save:&saveError];
-}
-
-
--(void)fetchUserDetails:(NSString *) user {
-    NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    NSEntityDescription *userData = [NSEntityDescription entityForName:@"User" inManagedObjectContext:_managedObjectContext];
-    [request setEntity:userData];
-    NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"user" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc]initWithObjects:sortDesc, nil];
-    [request setSortDescriptors:sortDescriptors];
-    
-    NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[_managedObjectContext executeFetchRequest:request error:&error]mutableCopy];
-    [self setUserArray:mutableFetchResults];
-    NSLog(@"there are %u in the user array",[userArray count]);
-    
-    
-}
-
--(void)placeGetRequest:(NSString *)action withHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error))ourBlock {
-    
-    NSString *urlString = [NSString stringWithFormat:@"%@&%@", @"http://mydrunkcart/index.php?route=module/apps/validate/", action];
-    //NSString *urlString = [NSString stringWithFormat:@"http://mydrunkcart/index.php?route=module/apps/validate/"];
-    
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:ourBlock] resume];
-}
-
-
-//Depericated GET Call
--(void)getREST:(NSString *) urlREST:(NSString *)prams {
-    
-    NSLog(@"Calling GET REST Service Start");
-    
-    NSString *urlWithParams = [NSString stringWithFormat:@"%@%@",urlREST,prams];
-    
-    NSURL *url = [NSURL URLWithString:urlWithParams];
-    
-    NSLog(@"Calling The URL: %@ ", urlWithParams);
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    
-    [NSURLConnection sendAsynchronousRequest:req
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler: ^(NSURLResponse *res, NSData *data, NSError *conError)
-     {
-         if(data.length >0 && conError == nil){
-             [_responseData appendData:data];
-             NSLog(@"Connection Success");
-             Data = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-             NSLog(@"Json Data %@", Data);
-             
-         }else{
-             NSLog(@"Error in connection");
-         }
-         
-     }];
-    NSLog(@"Calling GET REST Service End");
-}
-
-
--(void)postREST:(NSString *) urlREST:(NSString *)postData {
-    NSLog(@"Calling REST Post Service");
-    
-    NSLog(@"Calling The URL: %@ ", urlREST);
-    
-    
-    NSMutableArray *responseData = [[NSMutableArray alloc]init];
-    NSString *strurl= urlREST;
-    
-    NSString *strpostlength=[NSString stringWithFormat:@"%lu",(unsigned long) postData.length];
-    
-    NSMutableURLRequest *urlrequest=[[NSMutableURLRequest alloc]init];
-    
-    [urlrequest setURL:[NSURL URLWithString:strurl]];
-    [urlrequest setHTTPMethod:@"POST"];
-    [urlrequest setValue:strpostlength forHTTPHeaderField:@"Content-Length"];
-    [urlrequest setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    /*
-     
-     [NSURLConnection sendAsynchronousRequest:urlrequest queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-     {
-     if(data.length >0 && error == nil){
-     NSLog(@"Connection Success");
-     Data = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
-     
-     //NSLog(@"Json Data %@", responseData);
-     NSLog(@"%@", Data);
-     
-     }else{
-     NSLog(@"Error in connection");
-     }
-     
-     }];
-     */
-    activityInd.hidden = NO;
-    [activityInd startAnimating];
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:urlrequest delegate:self];
-    
-    
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    // A response has been received, this is where we initialize the instance var you created
-    // so that we can append data to it in the didReceiveData method
-    // Furthermore, this method is called each time there is a redirect so reinitializing it
-    // also serves to clear it
-    //_responseData = [[NSMutableData alloc] init];
-    activityInd.hidden = NO;
-    [activityInd startAnimating];
-    NSLog(@"Connection Called didReceiveResponse");
-    
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    // Append the new data to the instance variable you declared
-    [_responseData appendData:data];
-    //[self buildCategorySections:data];
-    //NSLog(@"Connection Called didReceiveData %@...", data);
-        if(_responseData.length >0 ){
-            NSLog(@"Connection Success");
-            Data = [NSJSONSerialization JSONObjectWithData:_responseData options:0 error:NULL];
-    
-            NSLog(@" User Data %@", Data);
-    
+        if ([passwordCoreData isEqualToString:passwordEncrypted]) {
+            NSLog(@"Password good, lets proceed with shopping");
         }else{
-            NSLog(@"Error in connection");
+            NSLog(@"Wrong Password good, please retry");
+            [self showAlert:@"Info" :@"Incorrect username or password!"];
+            return NO;
+
         }
+        
+    }else{
+        NSLog(@"NonExisting user in the coredata");
+        jsonUser = [[GlobalData sharedGlobalData] requestSynchronousData:urlRest :postData :@"POST"];
+        NSLog(@"User Data: %@", jsonUser);
+        
+        if(jsonUser != NULL){
+            if([[jsonUser objectForKey:@"status"]  isEqual: 0]){
+                NSLog(@"User Details not found due to %@", [jsonUser objectForKey:@"message"]);
+                [self showAlert:@"Info" :@"Incorrect username or password!"];
+                return NO;
+            }else{
+                NSLog(@"User Found Proceed");
+                [self addUserData:userEmailorPhone:password:jsonUser];
+                [self readUserData:userEmailorPhone];
+                
+            }
+        }else{
+            NSLog(@"No data found for the");
+        }
+    }
+    
+    
+    
+    
+    return YES;
+}
+
+
+-(void)addUserData: (NSString *)username :(NSString *) password :(NSDictionary *) data{
+ 
+    NSError *err;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:&err];
+    NSString *myString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+   
+    
+    NSMutableDictionary* userDict = [[NSMutableDictionary alloc]init];
+    userDict[@"username"] = username;
+    userDict[@"userdata"] = myString;
+    userDict[@"timestamp"] = [NSDate date];
+    [[CoreDataManager sharedManager]createEntityWithClassName:@"UserDetails" attributesDictionary:userDict];
+    
+    
+    userDict = [[NSMutableDictionary alloc]init];
+    userDict[@"username"] = username;
+    userDict[@"password"] = password;
+    userDict[@"ipaddress"] = [[GlobalData sharedGlobalData]getIPAddress];
+    userDict[@"loggedin"] = @YES;
+    userDict[@"timestamp"] = [NSDate date];
+    [[CoreDataManager sharedManager]createEntityWithClassName:@"User" attributesDictionary:userDict];
+
+    
+    [[CoreDataManager sharedManager]saveDataInManagedContextUsingBlock:^(BOOL saved, NSError *error){
+        if(error != nil){
+            NSLog(@"Saved");
+        }else{
+            NSLog(@"Save error %@",error);
+        }
+        
+    }];
+
     
 }
 
-- (NSCachedURLResponse *)connection:(NSURLConnection *)connection
-                  willCacheResponse:(NSCachedURLResponse*)cachedResponse {
-    NSLog(@"Connection Called cachedResponse");
-    // Return nil to indicate not necessary to store a cached response for this connection
-    return nil;
+
+-(NSArray*)readUserData :(NSString *)username {
+
+    NSArray *fetchedUserData = [[CoreDataManager sharedManager]fetchPredicateEntityWithClassName:@"UserDetails" :@"username" :username];
+    // display all objects
+    for (UserDetails *userdetails in fetchedUserData) {
+        NSLog(@"User nane %@ -- IPAddress %@ -- Date %@ ", [userdetails.username description], [userdetails.userdata description], [userdetails.timestamp description]);
+        
+    }
+    return fetchedUserData;
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)theconnection {
-    [activityInd stopAnimating];
-    activityInd.hidden = YES;
-    // The request is complete and data has been received
-    // You can parse the stuff in your instance variable now
-    //NSLog(@"Connection Called connectionDidFinishLoading %@",_responseData);
-//    if(_responseData.length >0 ){
-//        NSLog(@"Connection Success");
-//        Data = [NSJSONSerialization JSONObjectWithData:_responseData options:0 error:NULL];
-//        //categData = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
-//        //NSLog(@"Json Dict %@", categData);
-//        //self.names = categData;
-//        //NSArray *array = [[_names allKeys] sortedArrayUsingSelector:@selector(compare:)];
-//        //self.keys = array;
-//        
-//        NSLog(@"%@", Data);
-//        [self.tableView reloadData];
-//        
-//    }else{
-//        NSLog(@"Error in connection");
-//    }
-}
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    // The request has failed for some reason!
-    // Check the error var
-}
 
 - (IBAction)checkBox:(id)sender {
     if(!checked){
@@ -459,6 +363,13 @@
     alert = [[UIAlertView alloc] initWithTitle:title message:messageText delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
     //[alert release];
+}
+
+-(void)showActivityIndicator{
+    UIActivityIndicatorView* indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [indicatorView setFrame:CGRectMake(0, 0, 16, 16)];
+    [indicatorView setHidesWhenStopped:YES];
+    [indicatorView startAnimating];
 }
 
 @end

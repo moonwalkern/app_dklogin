@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		701E1F6D1C513DEB00C1D3B4 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */; };
 		701E1F701C54BE7E00C1D3B4 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */; };
+		701E1F761C56402B00C1D3B4 /* UserDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F731C56402B00C1D3B4 /* UserDetails+CoreDataProperties.m */; };
+		701E1F771C56402B00C1D3B4 /* UserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E1F751C56402B00C1D3B4 /* UserDetails.m */; };
 		703AE40A1C4BBFCB00D6EFCA /* NewUser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */; };
 		703AE40B1C4BBFCB00D6EFCA /* NewUser1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */; };
 		703AE40E1C4BCF6A00D6EFCA /* BackSign.png in Resources */ = {isa = PBXBuildFile; fileRef = 703AE40C1C4BCF6A00D6EFCA /* BackSign.png */; };
@@ -26,6 +28,11 @@
 		705C417F1C44FE7F00E32030 /* NewDrunkcartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 705C417E1C44FE7F00E32030 /* NewDrunkcartViewController.m */; };
 		705C41811C4502D100E32030 /* beerNew.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 705C41801C4502D100E32030 /* beerNew.jpg */; };
 		705C41831C454E1000E32030 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 705C41821C454E1000E32030 /* CoreLocation.framework */; };
+		7066A8881C58921400A9BDC1 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7066A8861C58921400A9BDC1 /* menu.png */; };
+		7066A8891C58921400A9BDC1 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7066A8871C58921400A9BDC1 /* menu@2x.png */; };
+		7066A88C1C58935F00A9BDC1 /* MainViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7066A88B1C58935F00A9BDC1 /* MainViewViewController.m */; };
+		7066A8921C58945600A9BDC1 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7066A8911C58945600A9BDC1 /* SidebarViewController.m */; };
+		7066A89B1C5A7E5600A9BDC1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7066A89A1C5A7E5600A9BDC1 /* MainViewController.m */; };
 		709DC16A1C3AEB0E0041F30F /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 709DC1671C3AEB0E0041F30F /* error@2x.png */; };
 		709DC16B1C3AEB0E0041F30F /* TextFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */; };
 		709DC1F91C3BCF4E0041F30F /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 709DC1F61C3BCF4E0041F30F /* User+CoreDataProperties.m */; };
@@ -62,6 +69,10 @@
 		701E1F6E1C54BE7E00C1D3B4 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		701E1F711C54BED600C1D3B4 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		701E1F721C56402B00C1D3B4 /* UserDetails+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserDetails+CoreDataProperties.h"; sourceTree = "<group>"; };
+		701E1F731C56402B00C1D3B4 /* UserDetails+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UserDetails+CoreDataProperties.m"; sourceTree = "<group>"; };
+		701E1F741C56402B00C1D3B4 /* UserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetails.h; sourceTree = "<group>"; };
+		701E1F751C56402B00C1D3B4 /* UserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetails.m; sourceTree = "<group>"; };
 		703AE4081C4BBFCB00D6EFCA /* NewUser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser.jpg; path = ../../../../Downloads/NewUser.jpg; sourceTree = "<group>"; };
 		703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = NewUser1.jpg; path = ../../../../Downloads/NewUser1.jpg; sourceTree = "<group>"; };
 		703AE40C1C4BCF6A00D6EFCA /* BackSign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BackSign.png; path = ../../../../Downloads/BackSign.png; sourceTree = "<group>"; };
@@ -82,6 +93,14 @@
 		705C417E1C44FE7F00E32030 /* NewDrunkcartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewDrunkcartViewController.m; path = DkLogin/NewDrunkcartViewController.m; sourceTree = "<group>"; };
 		705C41801C4502D100E32030 /* beerNew.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beerNew.jpg; path = ../../../../Downloads/beerNew.jpg; sourceTree = "<group>"; };
 		705C41821C454E1000E32030 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7066A8861C58921400A9BDC1 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = ../../../../Downloads/SidebarDemoTemplate/SidebarDemo/menu.png; sourceTree = "<group>"; };
+		7066A8871C58921400A9BDC1 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "../../../../Downloads/SidebarDemoTemplate/SidebarDemo/menu@2x.png"; sourceTree = "<group>"; };
+		7066A88A1C58935F00A9BDC1 /* MainViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewViewController.h; sourceTree = "<group>"; };
+		7066A88B1C58935F00A9BDC1 /* MainViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewViewController.m; sourceTree = "<group>"; };
+		7066A8901C58945600A9BDC1 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		7066A8911C58945600A9BDC1 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
+		7066A8991C5A7E5600A9BDC1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7066A89A1C5A7E5600A9BDC1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		709DC1671C3AEB0E0041F30F /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
 		709DC1681C3AEB0E0041F30F /* TextFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldValidator.h; sourceTree = "<group>"; };
 		709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldValidator.m; sourceTree = "<group>"; };
@@ -131,18 +150,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		70D210481C32940F0028183D = {
+		7066A98A1C61053C00A9BDC1 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				701E1F6B1C513DEB00C1D3B4 /* GlobalData.h */,
-				701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */,
-				701E1F6E1C54BE7E00C1D3B4 /* CoreDataManager.h */,
-				701E1F711C54BED600C1D3B4 /* Constants.h */,
-				701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */,
-				703AE4141C4C18FF00D6EFCA /* NewViewController.h */,
-				703AE4151C4C18FF00D6EFCA /* NewViewController.m */,
-				705C41821C454E1000E32030 /* CoreLocation.framework */,
-				705C416F1C3F8D4300E32030 /* DkAppDelegate.m */,
 				703AE4121C4BE63500D6EFCA /* BackBtn.png */,
 				703AE4101C4BD56400D6EFCA /* Back.png */,
 				703AE40C1C4BCF6A00D6EFCA /* BackSign.png */,
@@ -152,11 +162,30 @@
 				703AE4091C4BBFCB00D6EFCA /* NewUser1.jpg */,
 				705C41771C44C21500E32030 /* dk_bg_beer.jpg */,
 				705C41791C44F52000E32030 /* beerLogin.jpg */,
+				7066A8861C58921400A9BDC1 /* menu.png */,
+				7066A8871C58921400A9BDC1 /* menu@2x.png */,
 				705C41711C442E0F00E32030 /* checkbox-checked.png */,
 				705C41731C442E1800E32030 /* checkbox-pressed.png */,
 				705C41741C442E1800E32030 /* checkbox.png */,
 				709DC1671C3AEB0E0041F30F /* error@2x.png */,
 				705C41801C4502D100E32030 /* beerNew.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		70D210481C32940F0028183D = {
+			isa = PBXGroup;
+			children = (
+				7066A98A1C61053C00A9BDC1 /* images */,
+				701E1F6B1C513DEB00C1D3B4 /* GlobalData.h */,
+				701E1F6C1C513DEB00C1D3B4 /* GlobalData.m */,
+				701E1F6E1C54BE7E00C1D3B4 /* CoreDataManager.h */,
+				701E1F711C54BED600C1D3B4 /* Constants.h */,
+				701E1F6F1C54BE7E00C1D3B4 /* CoreDataManager.m */,
+				703AE4141C4C18FF00D6EFCA /* NewViewController.h */,
+				703AE4151C4C18FF00D6EFCA /* NewViewController.m */,
+				705C41821C454E1000E32030 /* CoreLocation.framework */,
+				705C416F1C3F8D4300E32030 /* DkAppDelegate.m */,
 				709DC1681C3AEB0E0041F30F /* TextFieldValidator.h */,
 				709DC1691C3AEB0E0041F30F /* TextFieldValidator.m */,
 				70D2108A1C3298560028183D /* LoginViewController.h */,
@@ -185,9 +214,19 @@
 			isa = PBXGroup;
 			children = (
 				70D2105D1C32940F0028183D /* Main.storyboard */,
+				7066A8991C5A7E5600A9BDC1 /* MainViewController.h */,
+				7066A89A1C5A7E5600A9BDC1 /* MainViewController.m */,
+				7066A8901C58945600A9BDC1 /* SidebarViewController.h */,
+				7066A8911C58945600A9BDC1 /* SidebarViewController.m */,
+				7066A88A1C58935F00A9BDC1 /* MainViewViewController.h */,
+				7066A88B1C58935F00A9BDC1 /* MainViewViewController.m */,
 				70D210631C32940F0028183D /* Assets.xcassets */,
 				70D210681C32940F0028183D /* Info.plist */,
 				70D210601C32940F0028183D /* DkLogin.xcdatamodeld */,
+				701E1F721C56402B00C1D3B4 /* UserDetails+CoreDataProperties.h */,
+				701E1F731C56402B00C1D3B4 /* UserDetails+CoreDataProperties.m */,
+				701E1F741C56402B00C1D3B4 /* UserDetails.h */,
+				701E1F751C56402B00C1D3B4 /* UserDetails.m */,
 				709DC1F51C3BCF4E0041F30F /* User+CoreDataProperties.h */,
 				709DC1F61C3BCF4E0041F30F /* User+CoreDataProperties.m */,
 				709DC1F71C3BCF4E0041F30F /* User.h */,
@@ -331,6 +370,7 @@
 			files = (
 				703AE40E1C4BCF6A00D6EFCA /* BackSign.png in Resources */,
 				709DC16A1C3AEB0E0041F30F /* error@2x.png in Resources */,
+				7066A8881C58921400A9BDC1 /* menu.png in Resources */,
 				703AE40B1C4BBFCB00D6EFCA /* NewUser1.jpg in Resources */,
 				703AE4131C4BE63500D6EFCA /* BackBtn.png in Resources */,
 				70D210641C32940F0028183D /* Assets.xcassets in Resources */,
@@ -341,6 +381,7 @@
 				705C41721C442E0F00E32030 /* checkbox-checked.png in Resources */,
 				705C41781C44C21500E32030 /* dk_bg_beer.jpg in Resources */,
 				70D2105F1C32940F0028183D /* Main.storyboard in Resources */,
+				7066A8891C58921400A9BDC1 /* menu@2x.png in Resources */,
 				705C41751C442E1800E32030 /* checkbox-pressed.png in Resources */,
 				703AE4111C4BD56400D6EFCA /* Back.png in Resources */,
 				703AE40F1C4BCF6A00D6EFCA /* FrontSign.png in Resources */,
@@ -371,11 +412,16 @@
 			files = (
 				709DC1F91C3BCF4E0041F30F /* User+CoreDataProperties.m in Sources */,
 				709DC1FA1C3BCF4E0041F30F /* User.m in Sources */,
+				701E1F771C56402B00C1D3B4 /* UserDetails.m in Sources */,
+				701E1F761C56402B00C1D3B4 /* UserDetails+CoreDataProperties.m in Sources */,
 				70D2108C1C3298560028183D /* LoginViewController.m in Sources */,
 				70D210621C32940F0028183D /* DkLogin.xcdatamodeld in Sources */,
+				7066A89B1C5A7E5600A9BDC1 /* MainViewController.m in Sources */,
 				705C41701C3F8D4300E32030 /* DkAppDelegate.m in Sources */,
 				701E1F701C54BE7E00C1D3B4 /* CoreDataManager.m in Sources */,
+				7066A88C1C58935F00A9BDC1 /* MainViewViewController.m in Sources */,
 				70D210561C32940F0028183D /* main.m in Sources */,
+				7066A8921C58945600A9BDC1 /* SidebarViewController.m in Sources */,
 				703AE4161C4C18FF00D6EFCA /* NewViewController.m in Sources */,
 				705C417F1C44FE7F00E32030 /* NewDrunkcartViewController.m in Sources */,
 				701E1F6D1C513DEB00C1D3B4 /* GlobalData.m in Sources */,
@@ -512,6 +558,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = DkLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLogin;
@@ -523,7 +571,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreeji.gopal@gmail.com (QYJ8EMR9N2)";
+				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = DkLogin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SwapDeal.DkLogin;
